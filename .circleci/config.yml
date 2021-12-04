@@ -19,21 +19,13 @@ jobs:
     <<: *script
     docker:
       - image: ruby:latest
+    resource_class: large
     parallelism: 15
   endvoc1:
     <<: *script
     docker:
       - image: ruby:latest
-    parallelism: 15
-  endvoc2:
-    <<: *script
-    docker:
-      - image: ruby:latest
-    parallelism: 15
-  endvoc3:
-    <<: *script
-    docker:
-      - image: ruby:latest
+    resource_class: large
     parallelism: 15
 workflows:
   version: 2
@@ -41,8 +33,6 @@ workflows:
     jobs:
       - endvoc
       - endvoc1
-      - endvoc2
-      - endvoc3
 
     triggers:
       - schedule:
@@ -56,5 +46,3 @@ workflows:
     jobs:
       - endvoc
       - endvoc1
-      - endvoc2
-      - endvoc3
